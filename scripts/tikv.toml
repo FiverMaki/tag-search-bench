@@ -1,0 +1,7 @@
+# Each TiKV sizes its caches from total system memory (block cache defaults to
+# 45%). playground runs 3 TiKVs on one machine, so without these caps they
+# together ask for more than the machine has and the VM starts swapping.
+memory-usage-limit = "4GB"
+
+[storage.block-cache]
+capacity = "1GB"
